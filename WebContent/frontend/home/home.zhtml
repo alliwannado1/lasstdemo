@@ -1,0 +1,217 @@
+<section xmlns:zk="zk" xmlns:n="native" xmlns:z="zul" apply="org.zkoss.bind.BindComposer">
+	<zscript><![CDATA[
+		tinbaiPB= entry.tinBais;
+		hd= entry.headerService;
+		thamso = entry.thamSos;
+	]]></zscript>
+	<p class="date-now">${hd.currentTime}</p>
+	<div class="row">
+        <div class="col-md-9 fixpadding-right">
+          <img class="banner-left" style="margin-bottom:15px;" src="files/tochuckyhop.png" width="100%">
+          <div class="tintuc-noibat">
+              <!--Start Slide Image-->
+              <div class="row">
+                <div class="col-md-8 bd-slide">
+                  <div class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                      <div class="${forEachStatus.first ? 'carousel-item active' :  'carousel-item'}" zk:forEach="${tinbaiPB.getListTinBaiSlide().limit(3).fetch()}">
+                        <div zk:if="${not empty each.categories}">
+                        	<img class="img-slide" src="files/tintuc.jpg" width="100%">
+	                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}" class="title-noibat">${each.title}</a>
+	                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}" class="baiviet-mota">${each.description}</a>
+                        </div>
+                      </div>
+                    </div>
+                   <!--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a> -->
+                  </div>
+                </div>
+                <div class="col-sm-4">
+                  <div class="tintuc-nho-noibat">
+                    <div class="item-tintuc" zk:forEach="${tinbaiPB.getListTinBaiSlide().offset(3).limit(5).fetch()}" zk:if="${not empty each.categories}">
+                        <div class="item-content" >
+                          <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--End Slide Image-->
+            </div>
+            <img class="banner-left" src="files/bannernghiquyet.png" width="100%" style="margin-top:15px;">
+            <div class="row" style="margin-top:15px;">
+              <div class="col-md-6 fixpadding-right">
+                <div class="title-tintuc">
+                	<span>
+                		<img class="logo-title"
+                			src="files/icon-svg.svg"></span>
+                	<a href="#" class="title-mg">
+                		${thamso.chuDeHDNDHuyen ne null ?
+                		thamso.chuDeHDNDHuyen.name : 'THƯỜNG TRỰC HDND
+                		HUYỆN'}
+                	</a>
+                </div>
+                <div class="tintuc-content">
+                  <div class="item-tintuc" zk:forEach="${tinbaiPB.getTop5ByThamSo(thamso.getChuDeHDNDHuyen().getMa())}">
+                      <div class="item-img" zk:if="${forEachStatus.first}">
+                        <img src="files${each.avatarImage.imageUrl}" width="120px" height="80px">
+                      </div>
+                      <div class="item-content text-noibat" zk:if="${forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                      <div class="item-content" zk:if="${!forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 fixpadding-left padding-rep">
+                <div class="title-tintuc">
+                	<span>
+                		<img class="logo-title"
+                			src="files/icon-svg.svg"></span>
+                	<a href="#" class="title-mg">
+                		${thamso.cacBanHDNDHuyen ne null ?
+                		thamso.cacBanHDNDHuyen.name : 'CÁC BAN THƯỜNG TRỰC HDND HUYỆN'}
+                	</a>
+                </div>
+                <div class="tintuc-content">
+                  <div class="item-tintuc" zk:forEach="${tinbaiPB.getTop5ByThamSo(thamso.getCacBanHDNDHuyen().getMa())}">
+                      <div class="item-img" zk:if="${forEachStatus.first}">
+                        <img src="files${each.avatarImage.imageUrl}" width="120px" height="80px">
+                      </div>
+                      <div class="item-content text-noibat" zk:if="${forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                      <div class="item-content" zk:if="${!forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <img src="files/bannerdoithoai.png" width="100%" class="banner-left" style="margin-top:15px;">
+            <!--Bai viet duoi-->
+            <div class="row" style="margin-top:15px;">
+              <div class="col-md-6 fixpadding-right">
+                <div class="title-tintuc">
+                	<span>
+                		<img class="logo-title"
+                			src="files/icon-svg.svg"></span>
+                	<a href="#" class="title-mg">
+                		${thamso.getHDNDXa() ne null ?
+                		thamso.getHDNDXa().getName() : 'HDND XÃ'}
+                	</a>
+                </div>
+                <div class="tintuc-content">
+                  <div class="item-tintuc" zk:forEach="${tinbaiPB.getTop5ByThamSo(thamso.getHDNDXa().getMa())}">
+                      <div class="item-img" zk:if="${forEachStatus.first}">
+                        <img src="files${each.avatarImage.imageUrl}" width="120px" height="80px">
+                      </div>
+                      <div class="item-content text-noibat" zk:if="${forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                      <div class="item-content" zk:if="${!forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 fixpadding-left padding-rep">
+                <div class="title-tintuc">
+                	<span>
+                		<img class="logo-title"
+                			src="files/icon-svg.svg"></span>
+                	<a href="#" class="title-mg">
+                		${thamso.getGiamSatCuaHDND() ne null ?
+                		thamso.getGiamSatCuaHDND().getName() : 'GIÁM SÁT CỦA HDND'}
+                	</a>
+                </div>
+                <div class="tintuc-content">
+                  <div class="item-tintuc" zk:forEach="${tinbaiPB.getTop5ByThamSo(thamso.getGiamSatCuaHDND().getMa())}">
+                      <div class="item-img" zk:if="${forEachStatus.first}">
+                        <img src="files${each.avatarImage.imageUrl}" width="120px" height="80px">
+                      </div>
+                      <div class="item-content text-noibat" zk:if="${forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                      <div class="item-content" zk:if="${!forEachStatus.first}">
+                        <a href="${ctxPath}/${each.categories.get(0).alias}/${each.categories.get(0).id}/id/${each.id}">${each.title}</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <!--Right Layout-->
+        <div class="col-md-3 fixpadding-left">
+          <img src="files/Banner1_1520218037287.png" width="100%">
+          <div class="right-content">
+            <div class="title-right">
+              <a href="#">THÔNG BÁO MỚI</a>
+            </div>
+            <marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="alternate" scrollamount="2" direction="up" class="content-rlayout">
+              <div class="item-marque">
+                <a href="#">Hòa Phú: Tập huấn kiến thức vệ sinh an toàn thực phẩm cho gần 150 hộ kinh doanh dịch vụ ăn uống, thức ăn đường phố</a>
+              </div>
+              <div class="item-marque">
+                <a href="#">Hòa Phú: Tập huấn kiến thức vệ sinh an toàn thực phẩm cho gần 150 hộ kinh doanh dịch vụ ăn uống, thức ăn đường phố</a>
+              </div>
+              <div class="item-marque">
+                <a href="#">Đoàn đại biểu Quốc hội đơn vị thành phố Đà Nẵng tiếp xúc cử tri huyện Hòa Vang</a>
+              </div>
+              <div class="item-marque">
+                <a href="#">Quy định giá đất ở đối với các đường chưa đặt tên tại các Khu dân cư trên địa bàn huyện Hòa Vang</a>
+              </div>
+              <div class="item-marque">
+                <a href="#">Đại hội Hội Người mù huyện Hòa Vang lần thứ IX, nhiệm kỳ 2017-2022</a>
+              </div>
+            </marquee>
+          </div>
+          <img class="banner-left" src="files/kyhopright.png" width="100%" style="margin-top:15px;">
+          <div class="right-content">
+            <div class="title-right">
+              <a href="#">VĂN BẢN MỚI</a>
+            </div>
+            <marquee onmouseover="this.stop();" onmouseout="this.start();" behavior="alternate" scrollamount="2" direction="up" class="content-rlayout">
+				<div class="item-marque" zk:forEach="${homes.listVanBan.fetch()}" viewModel="@id('vb') @init(each)">
+		           <a href="#">${vb.trichYeu}</a>
+		        </div>
+            </marquee>
+          </div>
+          <div class="right-content">
+            <div class="title-right">
+              <a href="#">VIDEO</a>
+            </div>
+            <div class="content-rlayout content-video" style="height:auto;">
+              <div class="item-video" zk:forEach="${homes.listVideo.fetch()}" viewModel="@id('vd') @init(each)">
+               	<div class="${forEachStatus.first ? 'item-video-nb' : 'item-video-mg'}">
+               		<iframe zk:if="${forEachStatus.first}" width="100%" src="${vd.file.fileUrl}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               		<a href="#" zk:if="${!forEachStatus.first}">${vd.tieuDe}</a>
+               	</div>
+              </div>
+              <div class="readmore">
+                <a href="#">Xem thêm>></a>
+              </div>
+            </div>
+          </div>
+          <div class="right-content">
+            <div class="title-right">
+              <a href="#">LƯỢT TRUY CẬP</a>
+            </div>
+            <div class="content-rlayout color-view" style="height:auto;">
+              <span>Đã truy cập : 9999</span><br>
+              <span>Đang truy cập : Zero</span>
+            </div>
+          </div>
+        </div>
+        <!--End Right Layout-->
+      </div>
+</section>

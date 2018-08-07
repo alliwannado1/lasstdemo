@@ -1,0 +1,67 @@
+<section xmlns:zk="zk" xmlns:z="zul">
+	
+      <p class="date-now">Thứ Sáu, ngày 13 tháng 7 năm 2018 | 15:14 GMT+7</p>
+      <div class="row">
+		<div class="col-md-3 fixpadding-right">
+			<div class="right-content">
+				<div class="title-tintuc">
+                  <span><img class="logo-title" src="images/icon-svg.svg"></span><a href="#" class="title-mg">VĂN BẢN MỚI</a>
+                </div>
+				 <div class="content-page">
+					<ul>
+						<li class="active"><i class="fas fa-caret-right">&#160;</i>&#160;Văn bản mới</li>
+						<li><i class="fas fa-caret-right">&#160;</i>&#160;Tất cả văn bản</li>
+						<li><i class="fas fa-caret-right">&#160;</i>&#160;Cơ quan ban hành</li>
+						<li><i class="fas fa-caret-right">&#160;</i>&#160;Lĩnh vực</li>
+						<li><i class="fas fa-caret-right">&#160;</i>&#160;Loại văn bản</li>
+					</ul>
+				 </div>
+			</div>
+          <img src="images/Banner1_1520218037287.png" width="100%">
+          <img class="banner-left" src="images/kyhopright.png" width="100%" style="margin-top:15px;">
+        </div>
+        <div class="col-md-9 fixpadding-left">
+			<div class="page-title">
+				<h4><a href="#">TIN TỨC</a></h4>
+			</div>
+			<div class="page-content">
+				<div class="item-tintuc">
+                      <div class="item-img">
+                        <img src="images/s_hdndhuyen2_1499843774462.jpg" width="183px" height="113px">
+                      </div>
+                      <div class="item-content-bd">
+                        <a href="#">Khai mạc kỳ họp thứ Tư, HĐND huyện khóa X, nhiệm kỳ 2016-2021</a>
+						<div class="tintuc-date">
+							<span>12/07/2017</span>
+						</div>
+						<div class="item-mota">
+							<span>Chiều ngày 27/6/2017, Thường trực HĐND huyện tổ chức họp giao ban với Tổ đại biểu HĐND huyện để thống nhất các vấn đề thảo luận, chất vấn tại kỳ họp thứ 4 HĐND huyện khóa X, nhiệm kỳ 2016-2021 Chiều ngày 27/6/2017, Thường trực HĐND huyện tổ chức họp giao ban với Tổ đại.</span>
+						</div>
+						<div class="readmore">
+							<a href="#">Xem chi tiết>></a>
+						  </div>
+                      </div>
+					  
+                 </div>
+				 <div class="item-tintuc">
+                      <div class="item-img">
+                        <img src="images/s_hdndhuyen2_1499843774462.jpg" width="183px" height="113px">
+                      </div>
+                      <div class="item-content-bd">
+                        <a href="#">Khai mạc kỳ họp thứ Tư, HĐND huyện khóa X, nhiệm kỳ 2016-2021</a>
+						<div class="tintuc-date">
+							<span>12/07/2017</span>
+						</div>
+						<div class="item-mota">
+							<span>Chiều ngày 27/6/2017, Thường trực HĐND huyện tổ chức họp giao ban với Tổ đại biểu HĐND huyện để thống nhất các vấn đề thảo luận, chất vấn tại kỳ họp thứ 4 HĐND huyện khóa X, nhiệm kỳ 2016-2021 Chiều ngày 27/6/2017, Thường trực HĐND huyện tổ chức họp giao ban với Tổ đại.</span>
+						</div>
+						<div class="readmore">
+							<a href="#">Xem chi tiết>></a>
+						  </div>
+                      </div>
+					  
+                 </div>
+			</div>
+         </div>
+      </div>
+</section>
